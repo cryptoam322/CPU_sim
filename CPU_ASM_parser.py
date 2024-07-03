@@ -814,8 +814,6 @@ class program():
             return(instruction)
         else:
             raise ValueError("The block ID does not exists")
-        
-        
 
 def validate_block_ID(block_ID):
     """
@@ -843,7 +841,6 @@ def validate_block_ID(block_ID):
         return(False, "used reserved end of execution block ID")
     return(True, None)
 
-
 def validate_register(register_ID, no_MEMAD = True):
     """
     Verfies that the given register ID is a valid register ID
@@ -861,7 +858,6 @@ def validate_register(register_ID, no_MEMAD = True):
                 return(True, None)
     else:
         return(False, "not found in special registers or named appropiately")
-    
 
 def validate_data(data_input):
     """
@@ -904,7 +900,6 @@ def validate_data(data_input):
     else:
         raise NotImplementedError("Missing handler for the prefix: "+str(prefix))
     return(True, None)
-
 
 def parse_data(data_input):
     """
