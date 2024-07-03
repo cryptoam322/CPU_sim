@@ -1,0 +1,21 @@
+# This ASM prints out into memory in ascending order incremented digits
+# IE for memory address 0, it will start with 1, address 1 will be 2, address 2 will be 3
+# It will stop once it detects that the counter has overflowed which will depend on the bit width being simulated
+BLOCK START
+SET R_ONE 0x000001
+JMP COUNTING
+
+BLOCK COUNTING
+COPY R_ONE R_1
+SET R_zero 0d
+ADD R_COUNTER R_1 R_COUNTER
+COPY R_COUNTER R_count
+STORE R_count
+CMP CARRY R_1 R_1 R_zero R_detected_OVERFLOW!
+ADDMEMAD R_1
+JIE R_detected_OVERFLOW! R_ONE END_PROGRAM
+JMP COUNTING
+
+BLOCK END_PROGRAM
+END
+

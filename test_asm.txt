@@ -1,0 +1,22 @@
+# This assembly is only intended to check that the parser is implemented correctly
+
+
+#houipj  asdfdvr
+BLOCK START
+SET R_1 0x00
+SET R_2 0d11
+ ADD R_1 R_2 R_3    
+# test comment
+SET R_1 0xFa
+SET R_3   0d2345
+SET   R_4 0b
+  ADD CARRY R_3 R_1
+JNE R_1 R_2 TEST
+#JMP TEST_NO_BLOCK
+    
+ 
+
+BLOCK TEST
+END
+
+BLOCK TESTING
