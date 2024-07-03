@@ -423,7 +423,7 @@ class CPU():
         """
         mem = self.memory.dump()
         return(mem)
-            
+
 def bitwise_negate(number, bit_width):
     """Given a number and a bit width, this function will calculate the negated version(bit wise NOT) for said binary string"""
     bin_string = bin(number)[2:len(bin(number))]
@@ -436,7 +436,6 @@ def bitwise_negate(number, bit_width):
             negated_bit_string = negated_bit_string + "0"
     result = int(negated_bit_string, 2)
     return(result)
-
 
 class memory():
     def __init__(self) -> None:
